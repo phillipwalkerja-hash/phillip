@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Webpage with Hamburger Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+
+  <header>
+<h2 style="text-align:center;">
+  ⚙️Welcome to Mr Walker's Information Technology Class⚡
+</h2>
+<br>
+    <!-- Hamburger icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Hidden nav menu -->
+    <nav id="menu">
+      <a href="#">Philosophy</a>
+      <a href="Artifacts.html">Artifacts</a>
+      <a href="#">Google Classroom</a>
+      <a href="#">Quiz</a>
+      <a href="#">Reflection</a>
+      <a href="#">References</a>
+    </nav>
+  </header>
+
+  <!-- Slideshow Section -->
+  <section class="slideshow">
+<div class="slides fade">
+  <img src="banner1.gif" alt="Animated Banner">
+</div>
+<div class="slides fade">
+  <img src="banner2.png" alt="Static Banner 2">
+</div>
+<div class="slides fade">
+  <img src="banner3.gif" alt="Static Banner 3">
+</div>
+   <!-- Navigation dots -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+
+
+<body>
+  <div class="container">
+    <h2>My Philosophy</h2>
+<div class="other-section">
+<pre>
+I believe that technology, when used purposefully and 
+responsibly, is a powerful tool for enhancing teaching 
+and learning. My personal philosophy for using technology 
+in education is centered on improving student engagement, 
+promoting critical thinking, and preparing learners to 
+function effectively in a digital world. Technology should 
+not replace good teaching; instead, it should support 
+meaningful learning experiences that are student-centered, 
+interactive, and relevant to real-life situations.
+
+Guided by the ISTE Standards, I strive to create learning 
+environments where students are empowered as knowledge 
+constructors and creative communicators, using digital
+ tools to research, analyze information, and express their
+ ideas in diverse ways. I believe students should also 
+develop skills as **digital citizens**, learning to use 
+technology ethically, safely, and responsibly while 
+respecting others in online spaces. As an educator, I aim 
+to model effective technology use by being a learner 
+myself—continuously exploring new tools—and by acting as a 
+facilitator who uses technology to personalize learning and 
+encourage collaboration.
+
+Additionally, I believe technology should be inclusive and 
+accessible, supporting diverse learning needs and learning 
+styles. It should be used to bridge gaps, not widen them, 
+by providing equal opportunities for all students to 
+participate and succeed. Assessment through technology 
+should be ongoing and formative, allowing both teachers and 
+students to track progress and reflect on learning. Ultimately, 
+my goal is to use technology to create engaging, ethical, and 
+future-ready learning experiences that equip students with the 
+skills, confidence, and adaptability needed for the 21st 
+century.
+</pre>
+</div>
+<hr>
+ <p>There are alot of stuff on this website to expore, check them out !</p>
+
+    <button class="button">Explore Now</button>
+  </div>
+
+  <footer>
+    © 2025 Futuristic Design. All rights reserved.
+  </footer>
+
+  <script>
+// HAMBURGER
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+//HAMBURGER
+
+// Slideshow logic
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 10000); // Change image every 4 seconds
+    }
+
+    function currentSlide(n) {
+      slideIndex = n-1;
+      showSlides();
+    }
+
+  </script>
+</body>
+</html>
